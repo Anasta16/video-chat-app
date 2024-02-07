@@ -1,14 +1,24 @@
 import React, { useState } from 'react';
+import { AiFillEye, AiFillEyeInvisible } from "react-icons/ai";
 import { Link } from 'react-router-dom';
 import OAuth from '../components/OAuth';
 
-export default function ForgotPassword() {
+export default function LogIn() {
 
-  const [email, setEmail] = useState("");
+  const [showPassword, setShowPassword] = useState(false);
+  const [formData, setFormData] = useState({
+    email: "",
+    password: ""
+  });
+
+  const {email, password} = formData;
 
   function onChange(e) {
-    setEmail(e.target.value);
-  }
+    setFormData((prevState) => ({
+      ...prevState,
+      [e.target.id]: e.target.value
+    })
+  )}
 
   return (
     <section>
@@ -20,7 +30,7 @@ export default function ForgotPassword() {
           font-bold
         "
       >
-        Forgot Password
+        Log In
       </h1>
       <div
         className="
@@ -80,6 +90,53 @@ export default function ForgotPassword() {
             />
             <div
               className="
+                relative
+                mb-6
+              "
+            >
+              <input
+                type={showPassword ? "text" : "password"}
+                id="password"
+                value={password}
+                onChange={onChange}
+                placeholder="Password"
+                className="
+                  w-full
+                  px-4
+                  py-2
+                  text-xl
+                  text-gray-700
+                  bg-white
+                  border-gray-300
+                  rounded
+                  transition duration-150 ease-in-out
+                "
+              />
+              { showPassword ? 
+                <AiFillEyeInvisible 
+                  className="
+                    absolute
+                    right-3
+                    top-3
+                    text-xl
+                    cursor-pointer
+                  "
+                  onClick={() => setShowPassword((prevState) => !prevState)}
+                /> 
+                  :
+                <AiFillEye 
+                  className="
+                    absolute
+                    right-3
+                    top-3
+                    text-xl
+                    cursor-pointer
+                  "
+                  onClick={() => setShowPassword((prevState) => !prevState)}
+                /> }
+            </div>
+            <div
+              className="
                 flex
                 justify-between
                 whitespace-nowrap
@@ -107,14 +164,14 @@ export default function ForgotPassword() {
               </p>
               <p>
                 <Link 
-                  to="/log-in"
+                  to="/forgot-password"
                   className="
                     text-blue-600
                     hover:text-blue-800
                     transition duration-200 ease-in-out
                   "  
                 >
-                  Log in instead?
+                  Forgot password?
                 </Link>
               </p>
             </div>
@@ -137,7 +194,7 @@ export default function ForgotPassword() {
                     active:bg-blue-800
                 "
               >
-                Send reset password
+                Log In
               </button>
               <div
                 className="

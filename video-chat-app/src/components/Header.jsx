@@ -118,11 +118,11 @@ export default function Header() {
                             text-gray-400
                             border-b-[3px]
                             border-b-transparent
-                            ${pathMatchRoute("/sign-in") && " text-black border-b-red-500"}
+                            ${pathMatchRoute("/log-in") && " text-black border-b-red-500"}
                         `}
-                        onClick={() => navigate("/sign-in")}
+                        onClick={() => navigate("/log-in")}
                     >
-                        Sign In
+                        Log In
                     </li>
                 </ul>
             </div>
