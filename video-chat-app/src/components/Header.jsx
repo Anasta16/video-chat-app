@@ -33,15 +33,29 @@ export default function Header() {
             "
         >
             <div>
-                <img 
-                    src={process.env.PUBLIC_URL + 'VideoChatLogo.jpg'} 
+                {/* <img 
+                    src={process.env.PUBLIC_URL + 'Chat.png'} 
                     alt="Example logo" 
                     className="
-                        h-20
+                        
+                        w-full
                         cursor-pointer
                     "
                     onClick={() => navigate("/")}
-                />
+                /> */}
+                <h1
+                    className="
+                        cursor-pointer
+                        text-blue-500
+                        hover:text-blue-700
+                        active:text-blue-800
+                        transition duration-150 ease-in-out
+                        font-extrabold
+                    "
+                    onClick={() => navigate("/")}
+                >
+                    Video Chat App (First Draft)
+                </h1>
             </div>
             <div>
                 <ul
