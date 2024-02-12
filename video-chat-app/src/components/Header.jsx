@@ -1,5 +1,6 @@
 import React from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
+import SearchBar from './SearchBar';
 
 export default function Header() {
 
@@ -15,7 +16,7 @@ export default function Header() {
   return (
     <div
         className="
-            bg-white
+            bg-green-400
             border-b
             shadow-sm
             sticky top-0
@@ -33,16 +34,6 @@ export default function Header() {
             "
         >
             <div>
-                {/* <img 
-                    src={process.env.PUBLIC_URL + 'Chat.png'} 
-                    alt="Example logo" 
-                    className="
-                        
-                        w-full
-                        cursor-pointer
-                    "
-                    onClick={() => navigate("/")}
-                /> */}
                 <h1
                     className="
                         cursor-pointer
@@ -51,13 +42,77 @@ export default function Header() {
                         active:text-blue-800
                         transition duration-150 ease-in-out
                         font-extrabold
+                        text-red-500
                     "
                     onClick={() => navigate("/")}
                 >
-                    Video Chat App (First Draft)
+                    Drinko (first draft)
                 </h1>
             </div>
+            <SearchBar />
             <div>
+            {/* <div>
+                <select
+                    value="Search"
+                >
+                    <option
+                            className={`
+                                cursor-pointer
+                                py-3 
+                                text-sm 
+                                font-semibold
+                                text-black
+                                border-b-[3px]
+                                ${pathMatchRoute("/") && " text-black border-b-red-500"}
+                            `}
+                            onClick={() => navigate("/")}
+                        >
+                            Home
+                        </option>
+                        <option
+                            className={`
+                                cursor-pointer
+                                py-3 
+                                text-sm 
+                                font-semibold
+                                text-black
+                                border-b-[3px]
+                                ${pathMatchRoute("/explore-chats") && " text-black border-b-red-500"}
+                            `}
+                            onClick={() => navigate("/explore-chats")}
+                            >
+                                Explore Chats
+                        </option>
+                        <option
+                            className={`
+                                cursor-pointer
+                                py-3 
+                                text-sm 
+                                font-semibold
+                                text-black
+                                border-b-[3px]
+                                ${pathMatchRoute("/about") && " text-black border-b-red-500"}
+                            `}
+                            onClick={() => navigate("/about")}
+                        >
+                            About
+                        </option>
+                        <option
+                            className={`
+                                cursor-pointer
+                                py-3 
+                                text-sm 
+                                font-semibold
+                                text-black
+                                border-b-[3px]
+                                ${pathMatchRoute("/log-in") && " text-black border-b-red-500"}
+                            `}
+                            onClick={() => navigate("/log-in")}
+                        >
+                            Log In
+                        </option>
+                </select>
+            </div> */}
                 <ul
                     className="
                         flex
@@ -70,9 +125,8 @@ export default function Header() {
                             py-3 
                             text-sm 
                             font-semibold
-                            text-gray-400
+                            text-black
                             border-b-[3px]
-                            border-b-transparent
                             ${pathMatchRoute("/") && " text-black border-b-red-500"}
                         `}
                         onClick={() => navigate("/")}
@@ -85,9 +139,8 @@ export default function Header() {
                             py-3 
                             text-sm 
                             font-semibold
-                            text-gray-400
+                            text-black
                             border-b-[3px]
-                            border-b-transparent
                             ${pathMatchRoute("/explore-chats") && " text-black border-b-red-500"}
                         `}
                         onClick={() => navigate("/explore-chats")}
@@ -100,9 +153,8 @@ export default function Header() {
                             py-3 
                             text-sm 
                             font-semibold
-                            text-gray-400
+                            text-black
                             border-b-[3px]
-                            border-b-transparent
                             ${pathMatchRoute("/about") && " text-black border-b-red-500"}
                         `}
                         onClick={() => navigate("/about")}
@@ -115,9 +167,8 @@ export default function Header() {
                             py-3 
                             text-sm 
                             font-semibold
-                            text-gray-400
+                            text-black
                             border-b-[3px]
-                            border-b-transparent
                             ${pathMatchRoute("/log-in") && " text-black border-b-red-500"}
                         `}
                         onClick={() => navigate("/log-in")}
