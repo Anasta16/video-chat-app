@@ -35,7 +35,7 @@ export default function Header() {
             border-b
             shadow-sm
             sticky top-0
-            z-50
+            z-40
         "
     >
         <header
